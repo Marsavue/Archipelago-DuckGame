@@ -33,4 +33,4 @@ class DuckGameWorld(World):
         return items.get_random_filler_item_name(self)
 
     def fill_slot_data(self) -> Mapping[str, Any]:
-        return self.options.as_dict("t")
+        return self.options.as_dict("medal_count_goal","send_lower_medals")

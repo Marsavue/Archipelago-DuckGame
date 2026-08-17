@@ -18,6 +18,7 @@ for levelitem in data.ITEM_LIST.keys():
     ITEM_NAME_TO_ID[levelitem] = count
     DEFAULT_ITEM_CLASSIFICATIONS[levelitem] = data.ITEM_LIST[levelitem]
     count += 1
+
 class DuckGameItem(Item):
     game = "DuckGame"
 
@@ -31,22 +32,24 @@ def create_item_with_correct_classification(world: DuckGameWorld, name: str) -> 
 
 
 def create_all_items(world: DuckGameWorld) -> None:
-    temp_levels = list(data.LEVEL_LIST.keys())
-    starting_level = world.random.randint(0, len(temp_levels)-1)
-    world.push_precollected(world.create_item(temp_levels[starting_level]))
-    del temp_levels[starting_level]
-    temp_items:dict = data.ITEM_LIST
-    for i in data.LEVEL_LIST[list(data.LEVEL_LIST.keys())[starting_level]]:
+    regions = list(world.get_regions())
+    del regions[0]
+    for r in range(len(regions)):
+        regions[r] = regions[r].name
+    starting_level = world.random.randint(0, len(regions)-1)
+    world.push_precollected(world.create_item(regions[starting_level]))
+    temp_items:dict = dict(data.ITEM_LIST)
+    for i in data.LEVEL_LIST[regions[starting_level]]:
         world.push_precollected(world.create_item(i))
         del temp_items[i]
-
+    del regions[starting_level]
     itempool: list[Item] = []
-    for l in range(len(temp_levels)):
-        itempool.append(world.create_item(list(temp_levels)[l]))
-    for i in temp_items.keys():
-        if temp_items[i] != ItemClassification.trap and temp_items[i] != ItemClassification.filler:
-            itempool.append(world.create_item(i))
-
+    for l in range(len(regions)):
+        itempool.append(world.create_item(regions[l]))
+        for i in data.LEVEL_LIST[regions[l]]:
+            if i in temp_items.keys():
+                itempool.append(world.create_item(i))
+                del temp_items[i]
     number_of_items = len(itempool)
     number_of_unfilled_locations = len(world.multiworld.get_unfilled_locations(world.player))
     needed_number_of_filler_items = number_of_unfilled_locations - number_of_items

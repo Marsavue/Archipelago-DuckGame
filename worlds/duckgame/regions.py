@@ -13,12 +13,16 @@ def create_and_connect_regions(world: DuckGameWorld) -> None:
 def create_all_regions(world: DuckGameWorld) -> None:
     main = Region("main", world.player, world.multiworld)
     regions = [main]
-    for r in range(len(data.LEVEL_LIST.keys())):
-        regions.append(Region(list(data.LEVEL_LIST.keys())[r], world.player, world.multiworld))
+    temp_regions = dict(data.LEVEL_LIST)
+    for r in range(world.options.total_arcade_levels):
+        rand_region = world.random.randint(0, len(temp_regions.keys())-1)
+        regions.append(Region(list(temp_regions.keys())[rand_region], world.player, world.multiworld))
+        del temp_regions[list(temp_regions.keys())[rand_region]]
     world.multiworld.regions += regions
-
 
 def connect_regions(world: DuckGameWorld) -> None:
     main = world.get_region("main")
-    for r in range(len(data.LEVEL_LIST.keys())):
-        main.connect(world.get_region(list(data.LEVEL_LIST.keys())[r]), list(data.LEVEL_LIST.keys())[r])
+    regions = list(world.get_regions())
+    del regions[0]
+    for r in regions:
+        main.connect(world.get_region(r.name), r.name)

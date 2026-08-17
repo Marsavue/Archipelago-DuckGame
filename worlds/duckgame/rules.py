@@ -1,8 +1,9 @@
 from __future__ import annotations
 from typing import TYPE_CHECKING
 from BaseClasses import CollectionState
-from rule_builder.rules import HasAll
+from rule_builder.rules import HasAll, AtLeast
 from . import data
+from worlds.duckgame.options import MedalCountGoal
 
 if TYPE_CHECKING:
     from .world import DuckGameWorld
@@ -12,23 +13,35 @@ def set_all_rules(world: DuckGameWorld) -> None:
     set_all_location_rules(world)
     set_completion_condition(world)
 
-# Should probably change these to location rules but it doesn't matter
+# Should probably change these to location rules but it doesn't matter rn
 def set_all_entrance_rules(world: DuckGameWorld) -> None:
-    for e in range(len(data.LEVEL_LIST.keys())):
-        world.set_rule(world.get_entrance(list(data.LEVEL_LIST.keys())[e]), HasAll(list(data.LEVEL_LIST.keys())[e],*data.LEVEL_LIST[list(data.LEVEL_LIST.keys())[e]]))
+    regions = list(world.get_regions())
+    del regions[0]
+    for r in regions:
+        world.set_rule(world.get_entrance(r.name), HasAll(r.name,*data.LEVEL_LIST[r.name]))
 
 def set_all_location_rules(world: DuckGameWorld) -> None:
     return
 
-
 def set_completion_condition(world: DuckGameWorld) -> None:
-    #TODO NEED TO CREATE VICTORY EVENT
-
-    # Finally, we need to set a completion condition for our world, defining what the player needs to win the game.
-    # You can just set a completion condition directly like any other condition, referencing items the player receives:
-    # world.multiworld.completion_condition[world.player] = lambda state: state.has_all(("Sword", "Shield"), world.player)
-
-    # In our case, we went for the Victory event design pattern (see create_events() in locations.py).
-    # So lets undo what we just did, and instead set the completion condition to:
-    # world.multiworld.completion_condition[world.player] = lambda state: state.has("Victory", world.player)
-    return
+    # Update this to do the same as the other junk (getattr)
+    medals_per_level = 0
+    if world.options.use_bronze_medal:
+        medals_per_level += 1
+    if world.options.use_silver_medal:
+        medals_per_level += 1
+    if world.options.use_gold_medal:
+        medals_per_level += 1
+    if world.options.use_platinum_medal:
+        medals_per_level += 1
+    if world.options.use_developer_medal:
+        medals_per_level += 1
+    if world.options.medal_count_goal > MedalCountGoal(world.options.total_arcade_levels*medals_per_level):
+        world.options.medal_count_goal = MedalCountGoal(world.options.total_arcade_levels*medals_per_level)
+    goal_rules = []
+    regions = list(world.get_regions())
+    del regions[0]
+    for r in regions:
+        for m in range(medals_per_level):
+            goal_rules.append(HasAll(r.name,*data.LEVEL_LIST[r.name]))
+    world.set_completion_rule(AtLeast(int(world.options.medal_count_goal),*goal_rules))

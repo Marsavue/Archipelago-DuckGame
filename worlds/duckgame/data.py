@@ -39,7 +39,7 @@ LEVEL_LIST = {
     "VARIETY ZONE - OBSTACLE COURSE":[],
     "VARIETY ZONE - DEATH RAY 101":["Huge Laser"],
     "VARIETY ZONE - SWING SHOES":["Grapple","Boots"],
-    "TARGET MISSIONS - STEP 1: OFFICE RAID":["Snubby Pistol"],
+    "TARGET MISSIONS - STEP 1: OFFICE RAID":["Snubby Pistol","Pistol"],
     "TARGET MISSIONS - STEP 2: INTEL":["Pistol","Key","Jetpack"],
     "TARGET MISSIONS - STEP 3: HEADQUARTERS":["Key","Crates","Magnum","Boots","Combat Shotgun"],
     "VARIETY ZONE 2 - MACE FACE":["Mace Collar","Weight Ball"],
