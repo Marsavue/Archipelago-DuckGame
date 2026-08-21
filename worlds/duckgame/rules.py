@@ -4,6 +4,7 @@ from BaseClasses import CollectionState
 from rule_builder.rules import HasAll, AtLeast
 from . import data
 from worlds.duckgame.options import MedalCountGoal
+from math import floor
 
 if TYPE_CHECKING:
     from .world import DuckGameWorld
@@ -42,6 +43,5 @@ def set_completion_condition(world: DuckGameWorld) -> None:
     regions = list(world.get_regions())
     del regions[0]
     for r in regions:
-        for m in range(medals_per_level):
-            goal_rules.append(HasAll(r.name,*data.LEVEL_LIST[r.name]))
-    world.set_completion_rule(AtLeast(int(world.options.medal_count_goal),*goal_rules))
+        goal_rules.append(HasAll(r.name,*data.LEVEL_LIST[r.name]))
+    world.set_completion_rule(AtLeast(floor(world.options.medal_count_goal/medals_per_level),*goal_rules))

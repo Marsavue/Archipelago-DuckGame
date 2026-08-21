@@ -50,6 +50,9 @@ def create_all_items(world: DuckGameWorld) -> None:
             if i in temp_items.keys():
                 itempool.append(world.create_item(i))
                 del temp_items[i]
+    for i in temp_items.keys():
+        if temp_items[i] != ItemClassification.progression:
+            itempool.append(world.create_item(i))
     number_of_items = len(itempool)
     number_of_unfilled_locations = len(world.multiworld.get_unfilled_locations(world.player))
     needed_number_of_filler_items = number_of_unfilled_locations - number_of_items

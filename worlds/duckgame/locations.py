@@ -11,6 +11,7 @@ LOCATION_NAME_TO_ID = {}
 low_medal_order = ["Silver","Gold","Platinum","Bronze","Developer"]
 
 # Update this to do the same as the other junk (getattr)
+# What are you saying dawg, you can just do a loop it'll take 5 seconds
 loc = 1
 for l in range(len(list(data.LEVEL_LIST.keys()))):
     LOCATION_NAME_TO_ID[list(data.LEVEL_LIST.keys())[l]+" Bronze Medal"] = loc
@@ -45,8 +46,8 @@ def create_regular_locations(world: DuckGameWorld) -> None:
     for r in regions:
         region = world.get_region(r.name)
         locations = []
-        for l in medals:
-            locations.append(r.name+" "+l+" Medal")
+        for m in medals:
+            locations.append(r.name+" "+m+" Medal")
         region.add_locations(get_location_names_with_ids(locations), DuckGameLocation)
 
 def create_events(world: DuckGameWorld) -> None:
