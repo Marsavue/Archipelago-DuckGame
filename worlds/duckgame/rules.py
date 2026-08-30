@@ -25,24 +25,23 @@ def set_all_location_rules(world: DuckGameWorld) -> None:
     return
 
 def set_completion_condition(world: DuckGameWorld) -> None:
-    return
     # This is the real code for after AtLeast gets implemented in Stable
     # Not well versed enough to figure this out without AtLeast/long gen times
 
     # Update this to do the same as the other junk (getattr)
-    # medals_per_level = 0
-    # if world.options.use_bronze_medal:
-    #     medals_per_level += 1
-    # if world.options.use_silver_medal:
-    #     medals_per_level += 1
-    # if world.options.use_gold_medal:
-    #     medals_per_level += 1
-    # if world.options.use_platinum_medal:
-    #     medals_per_level += 1
-    # if world.options.use_developer_medal:
-    #     medals_per_level += 1
-    # if world.options.medal_count_goal > MedalCountGoal(world.options.total_arcade_levels*medals_per_level):
-    #     world.options.medal_count_goal = MedalCountGoal(world.options.total_arcade_levels*medals_per_level)
+    medals_per_level = 0
+    if world.options.use_bronze_medal:
+        medals_per_level += 1
+    if world.options.use_silver_medal:
+        medals_per_level += 1
+    if world.options.use_gold_medal:
+        medals_per_level += 1
+    if world.options.use_platinum_medal:
+        medals_per_level += 1
+    if world.options.use_developer_medal:
+        medals_per_level += 1
+    if world.options.medal_count_goal > MedalCountGoal(world.options.total_arcade_levels*medals_per_level):
+        world.options.medal_count_goal = MedalCountGoal(world.options.total_arcade_levels*medals_per_level)
     # goal_rules = []
     # regions = list(world.get_regions())
     # del regions[0]
