@@ -32,7 +32,45 @@ ITEM_LIST = {
     "Mag Blaster":ItemClassification.progression,
     "Laser Rifle":ItemClassification.progression,
     "AK47":ItemClassification.useful,
+}
+
+FILLER_LIST = {
+    "Clumsy":ItemClassification.trap,                   #Ragdoll
+    "Stop Hitting Yourself":ItemClassification.trap,    #Brainrot
+    "FIREEE!":ItemClassification.trap,                  #Fire
+    "FIREEE*":ItemClassification.trap,                  #Fire Prank
+    "Slippery Hands":ItemClassification.trap,           #Throw held item
+    "Whats Under There?":ItemClassification.trap,       #Speed up/Teleport
+    "Caught You!":ItemClassification.trap,              #Net
+    "Duck Season":ItemClassification.trap,              #Suicide Gun
+    "Hot Potato":ItemClassification.trap,               #Grenade in hand
+    "Whats This?":ItemClassification.trap,              #Give random weapon
+    "esreveR":ItemClassification.trap,                  #Reverse
+    "A Gift for you":ItemClassification.trap,           #Death Crate
+    "Don't look up":ItemClassification.trap,            #Grenade rain
+
+    "Prot V":ItemClassification.filler,                 #Give armour
+    "Make it rain":ItemClassification.filler,           #Infinite ammo
+
     "Filler":ItemClassification.filler,
+}
+
+SETTING_FILLER_LIST = {
+    "ragdoll":"Clumsy",
+    "brainrot":"Stop Hitting Yourself",
+    "fire":"FIREEE!",
+    "fire_prank":"FIREEE*",
+    "drop":"Slippery Hands",
+    "speed":"Whats Under There?",
+    "net":"Caught You!",
+    "suicide":"Duck Season",
+    "grenade":"Hot Potato",
+    "rand_weapon":"Whats This?",
+    "reverse":"esreveR",
+    "death_crate":"A Gift for you",
+    "grenade":"Don't look up",
+    "armour":"Prot V",
+    "ammo":"Make it rain",
 }
 
 LEVEL_LIST = {

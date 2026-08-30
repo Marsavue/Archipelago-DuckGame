@@ -14,22 +14,35 @@ for l in range(len(data.LEVEL_LIST.keys())):
     ITEM_NAME_TO_ID[list(data.LEVEL_LIST.keys())[l]] = count
     DEFAULT_ITEM_CLASSIFICATIONS[list(data.LEVEL_LIST.keys())[l]] = ItemClassification.progression
     count += 1
-for levelitem in data.ITEM_LIST.keys():
-    ITEM_NAME_TO_ID[levelitem] = count
-    DEFAULT_ITEM_CLASSIFICATIONS[levelitem] = data.ITEM_LIST[levelitem]
+for level_item in data.ITEM_LIST.keys():
+    ITEM_NAME_TO_ID[level_item] = count
+    DEFAULT_ITEM_CLASSIFICATIONS[level_item] = data.ITEM_LIST[level_item]
+    count += 1
+
+for filler_item in data.FILLER_LIST.keys():
+    ITEM_NAME_TO_ID[filler_item] = count
+    DEFAULT_ITEM_CLASSIFICATIONS[filler_item] = data.FILLER_LIST[filler_item]
     count += 1
 
 class DuckGameItem(Item):
     game = "DuckGame"
 
 def get_random_filler_item_name(world: DuckGameWorld) -> str:
+    if world.random.randint(0,99) < world.options.trap_percent:
+        max_filler_weight=0
+        for f in list(data.SETTING_FILLER_LIST.keys()):
+            max_filler_weight+=getattr(world.options,f+"_weight")
+        rand_trap = world.random.randint(0,max_filler_weight-1)
+        current_weight = 0
+        for f in list(data.SETTING_FILLER_LIST.keys()):
+            current_weight+=getattr(world.options,f+"_weight")
+            if rand_trap<current_weight:
+                return data.SETTING_FILLER_LIST[f]
     return "Filler"
-
 
 def create_item_with_correct_classification(world: DuckGameWorld, name: str) -> DuckGameItem:
     classification = DEFAULT_ITEM_CLASSIFICATIONS[name]
     return DuckGameItem(name, classification, ITEM_NAME_TO_ID[name], world.player)
-
 
 def create_all_items(world: DuckGameWorld) -> None:
     regions = list(world.get_regions())
