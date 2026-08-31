@@ -1,0 +1,44 @@
+machine,level,base,bronze,silver,gold,platinum,developer,notes
+VARIETY ZONE,OBSTACLE COURSE,,,,,,,
+VARIETY ZONE,DEATH RAY 101,Huge Laser,,,,,,
+VARIETY ZONE,SWING SHOES,Grapple+Boots,,,,,,
+TARGET MISSIONS,STEP 1: OFFICE RAID,Snubby Pistol+Pistol,,,,,AK47,AK47 needs to be classified progression
+TARGET MISSIONS,STEP 2: INTEL,Pistol+(Jetpack*),,,,,Shotgun+Magnum,"*replaceable with gun-jumping/angle shots
+Key can give developer time if you have no Desk (so it can't be in logic)"
+TARGET MISSIONS,STEP 3: HEADQUARTERS,Key+(Crates*)+Magnum+Boots+Combat Shotgun,,,,,,"*replaceable by ragdolling into the guy, very easy"
+VARIETY ZONE 2,MACE FACE,Mace Collar+Weight Ball,,,,,,"I think these two items should be merged into one Mace item, they're only ever paired together"
+VARIETY ZONE 2,PHASER 101,Phaser,,,,,,
+VARIETY ZONE 2,SWING SHOTGUN,Combat Shotgun,(Grapple*),(Grapple*),Grapple,Grapple,Grapple,*replaceable with angle shots
+SUPER SAW DUCK,WALL JUMP 101,Wall Boots,,,,,,
+SUPER SAW DUCK,"WOAH, SPIKES!",Wall Boots,,,,,,bronze is technically possible without Wall Boots using extreme ragdoll tech
+SUPER SAW DUCK,SUPER DUCK CHAMP,Wall Boots,,,,,,idk how to get developer without door clipping lol
+CHAINSAW RACING,OPEN ROAD,,,,,,Chainsaw,jump on top of trees
+CHAINSAW RACING,PRO TOUR,,(Chainsaw*),(Chainsaw*),Chainsaw,Chainsaw,Chainsaw,*replaceable with ragdoll tech
+CHAINSAW RACING,GRINDY 500,Chainsaw,,,,Key,Key,"platinum is possible without Key but is very difficult
+bronze/silver are technically possible without Chainsaw using extreme ragdoll tech (silver req. Key)"
+OFFICE WORK,WORKING LATE,,,,,,Crates,
+OFFICE WORK,DOOR CRASHER,Virtual Shotgun,,,,,,
+OFFICE WORK,INDUSTRIAL SHOOTOUT,Pistol,,,,,,"gets harder the more weapons you have lol, i'm only good enough to get dev if I only have pistol"
+WEAPON TRAINING,GRENADE LAUNCHER 101,Grenade Launcher,,,,,,
+WEAPON TRAINING,MAGNUM TRAINING,Magnum,,,,,,
+WEAPON TRAINING,CHAINGUN JETPACK,Chaingun,,,Jetpack,Jetpack,Jetpack,
+TELEPORTERS,TELE TWISTER,Grenade,,,,,,
+TELEPORTERS,LABYRINTH,Sword,,,,,,
+TELEPORTERS,DUCK DODGER,Quad Laser,,,,,,
+VARIETY ZONE FINAL,ASCENSION,Jetpack,,,,,,
+VARIETY ZONE FINAL,SNIPER 101,Sniper,,,,,,
+VARIETY ZONE FINAL,SWING MACE,Grapple+Mace Collar+Weight Ball,(Helmet*),(Helmet*),(Helmet*),Helmet,Helmet,"*without helmet, these are equivalent to Swing Mace Pro's silver/platinum/dev medals"
+VARIETY ZONE FINAL II,GUN JUMPER,,(Mag Blaster*),(Mag Blaster*),(Mag Blaster*),Mag Blaster,Mag Blaster,"*replaceable with ragdoll tech
+itemless gold is quite hard (TODO: test with Crates)"
+VARIETY ZONE FINAL II,REBOUND 101,Laser Rifle,,,,,,
+VARIETY ZONE FINAL II,SAW CHAMPION,Wall Boots,,,,,(AK47*),"*replaceable with ragdoll tech, but is quite hard"
+Chancy Challenges,Swing Mace Pro,Grapple+Mace Collar+Weight Ball,,,,,,
+Chancy Challenges,Turbo Chainsaw,,(Chainsaw*),Chainsaw,Chainsaw,Chainsaw,Chainsaw,"*replaceable with ragdoll tech
+(I guess these are techically ""Super Chainsaw"" if that should be its own item)"
+Chancy Challenges,Spike Shotgun,Combat Shotgun,(Grapple*),(Grapple*),Grapple,Grapple,Grapple,*replaceable with angle shots
+Chancy Challenges,Grenade Launcher 102,Jetpack+Boots+Grenade Launcher,,,,,,"earlier medals might be doable with just Boots or Grenade Launcher, unable to test"
+Chancy Challenges,All Backwards,Jetpack,,,,,,bronze is technically possible without Jetpack using extreme ragdoll tech
+Chancy Challenges,Shortsighted Saws,Wall Boots,,,,,,
+Chancy Challenges,Timing is Hard,Huge Laser,,,,,,
+Chancy Challenges,Duck Dodger V.2.0,Quad Laser,,,,,,
+Chancy Challenges,Working even later,,,,,,,

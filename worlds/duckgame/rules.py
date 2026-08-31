@@ -29,6 +29,8 @@ def set_completion_condition(world: DuckGameWorld) -> None:
     # Not well versed enough to figure this out without AtLeast/long gen times
 
     # Update this to do the same as the other junk (getattr)
+    print(world.options.death_link)
+    print(world.options.death_link_amnesty)
     medals_per_level = 0
     if world.options.use_bronze_medal:
         medals_per_level += 1

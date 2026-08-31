@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from Options import Choice, OptionGroup, PerGameCommonOptions, Range, Toggle, DefaultOnToggle
+from Options import Choice, OptionGroup, PerGameCommonOptions, Range, Toggle, DefaultOnToggle, DeathLink
 from . import data
 
 class TotalArcadeLevels(Range):
@@ -84,6 +84,18 @@ class MinMedalTypes(Range):
     range_start = 1
     range_end = 5
     default = 3
+
+class DeathLinkAmnesty(Range):
+    """
+    Amount of deaths required from you to send out a Death Link to other Players
+    0  = Only receive Death Links does not send any when you die
+    1+ = Send a Death Link when you die this amount of times
+    
+    """
+    display_name = "Death Link Amnesty"
+    range_start = 0
+    range_end = 100
+    default = 0
 
 class TrapPercent(Range):
     """
@@ -274,6 +286,8 @@ class DuckGameOptions(PerGameCommonOptions):
     use_platinum_medal:PlatinumMedal
     use_developer_medal:DeveloperMedal
     min_medal_types:MinMedalTypes
+    death_link:DeathLink
+    death_link_amnesty:DeathLinkAmnesty
 
     trap_percent:TrapPercent
     ragdoll_weight:RagdollTrapWeight
