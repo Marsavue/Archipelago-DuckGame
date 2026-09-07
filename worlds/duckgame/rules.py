@@ -53,8 +53,8 @@ def set_completion_condition(world: DuckGameWorld) -> None:
                     reqs = [*reqs, *items[i]]
                 goal_rules.append(HasAll(r.name,*reqs))
         pos+=1
-    if world.options.medal_count_goal > MedalCountGoal(world.options.total_arcade_levels*medals_per_level):
-        world.options.medal_count_goal = MedalCountGoal(world.options.total_arcade_levels*medals_per_level)
+    if world.options.medal_count_goal > MedalCountGoal(len(goal_rules)):
+        world.options.medal_count_goal = MedalCountGoal(len(goal_rules))
     world.set_completion_rule(MyAtLeast(int(world.options.medal_count_goal),*goal_rules))
 
 
@@ -99,12 +99,13 @@ class MyAtLeast(NestedRule["DuckGameWorld"], game="DuckGame"):
 
         if len(clauses) < count:
             return False_().resolve(world)
-        if count == 1:
+        # REMOVED THESE CAUSE THEY DON'T WORK ON 0.6.7 must be missing some stuff
+        # if count == 1:
             # Switch to Or which has more optimized handling
-            return Or.from_resolved(world, clauses)
-        if count == len(clauses):
+            # return Or.from_resolved(world, clauses)
+        # if count == len(clauses):
             # Switch to And which has more optimized handling
-            return And.from_resolved(world, clauses)
+            # return And.from_resolved(world, clauses)
         return MyAtLeast.Resolved(
             tuple(clauses),
             count=count,

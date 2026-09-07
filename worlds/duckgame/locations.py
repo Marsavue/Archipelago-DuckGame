@@ -3,6 +3,7 @@ from typing import TYPE_CHECKING
 from BaseClasses import ItemClassification, Location
 from . import items,data
 from .data import low_medal_order,medal_order,level_list_keys
+from worlds.duckgame.options import SilverMedal,GoldMedal,PlatinumMedal,BronzeMedal,DeveloperMedal
 
 if TYPE_CHECKING:
     from .world import DuckGameWorld
