@@ -2,24 +2,18 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from BaseClasses import ItemClassification, Location
 from . import items,data
-from worlds.duckgame.options import SilverMedal,GoldMedal,PlatinumMedal,BronzeMedal,DeveloperMedal
+from .data import low_medal_order,medal_order,level_list_keys
 
 if TYPE_CHECKING:
     from .world import DuckGameWorld
 
 LOCATION_NAME_TO_ID = {}
-low_medal_order = ["Silver","Gold","Platinum","Bronze","Developer"]
 
-# Update this to do the same as the other junk (getattr)
-# What are you saying dawg, you can just do a loop it'll take 5 seconds
 loc = 1
-for l in range(len(list(data.LEVEL_LIST.keys()))):
-    LOCATION_NAME_TO_ID[list(data.LEVEL_LIST.keys())[l]+" Bronze Medal"] = loc
-    LOCATION_NAME_TO_ID[list(data.LEVEL_LIST.keys())[l]+" Silver Medal"] = loc+1
-    LOCATION_NAME_TO_ID[list(data.LEVEL_LIST.keys())[l]+" Gold Medal"] = loc+2
-    LOCATION_NAME_TO_ID[list(data.LEVEL_LIST.keys())[l]+" Platinum Medal"] = loc+3
-    LOCATION_NAME_TO_ID[list(data.LEVEL_LIST.keys())[l]+" Developer Medal"] = loc+4
-    loc += 5
+for l in range(len(level_list_keys)):
+    for m in medal_order:
+        LOCATION_NAME_TO_ID[level_list_keys[l]+" "+m+" Medal"] = loc
+        loc +=1
 
 class DuckGameLocation(Location):
     game = "DuckGame"
