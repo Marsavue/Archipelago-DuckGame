@@ -99,7 +99,7 @@ LEVEL_LIST = {
     "TELEPORTERS - DUCK DODGER":                [["Quad Laser"],[],[],[],[]],
     "VARIETY ZONE FINAL - ASCENSION":           [["Jetpack"],[],[],[],[]],
     "VARIETY ZONE FINAL - SNIPER 101":          [["Sniper"],[],[],[],[]],
-    "VARIETY ZONE FINAL - SWING MACE":          [["Grapple","Mace"],[],["Helmet"],[],[]],
+    "VARIETY ZONE FINAL - SWING MACE":          [["Grapple","Mace"],["Helmet"],[],[],[]],
     "VARIETY ZONE FINAL II - GUN JUMPER":       [["Mag Blaster"],[],[],[],[]],
     "VARIETY ZONE FINAL II - REBOUND 101":      [["Laser Rifle"],[],[],[],[]],
     "VARIETY ZONE FINAL II - SAW CHAMPION":     [["Wall Boots"],[],[],[],["AK47"]],
