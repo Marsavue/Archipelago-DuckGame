@@ -22,7 +22,7 @@ class MedalCountGoal(Range):
     display_name = "Medal Count for Goal"
     range_start = 1
     range_end = len(data.LEVEL_LIST)*5
-    default = len(data.LEVEL_LIST)*4
+    default = len(data.LEVEL_LIST)*3
 
 class SendLowerMedals(DefaultOnToggle):
     """
