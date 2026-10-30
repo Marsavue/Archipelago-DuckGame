@@ -78,7 +78,7 @@ LEVEL_LIST = {
     "VARIETY ZONE - SWING SHOES":               [["Grapple","Boots"],[],[],[],[]],
     "TARGET MISSIONS - STEP 1: OFFICE RAID":    [["Snubby Pistol","Pistol"],[],[],[],["AK47"]],
     "TARGET MISSIONS - STEP 2: INTEL":          [["Pistol","Jetpack"],[],[],[],["Shotgun","Magnum"]],
-    "TARGET MISSIONS - STEP 3: HEADQUARTERS":   [["Key","Magnum","Boots","Combat Shotgun"],[],[],[],[]],
+    "TARGET MISSIONS - STEP 3: HEADQUARTERS":   [["Key","Magnum","Boots","Combat Shotgun"],[],[],[],["Pistol"]],
     "VARIETY ZONE 2 - MACE FACE":               [["Mace"],[],[],[],[]],
     "VARIETY ZONE 2 - PHASER 101":              [["Phaser"],[],[],[],[]],
     "VARIETY ZONE 2 - SWING SHOTGUN":           [["Combat Shotgun","Grapple"],[],[],[],[]],
