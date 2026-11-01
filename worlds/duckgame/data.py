@@ -86,7 +86,7 @@ LEVEL_LIST = {
     "SUPER SAW DUCK - WOAH, SPIKES!":           [["Wall Boots"],[],[],[],[]],
     "SUPER SAW DUCK - SUPER DUCK CHAMP":        [["Wall Boots"],[],[],[],[]],
     "CHAINSAW RACING - OPEN ROAD":              [[],[],[],[],["Chainsaw"]],
-    "CHAINSAW RACING - PRO TOUR":               [["Chainsaw"],[],[],[],[]],
+    "CHAINSAW RACING - PRO TOUR":               [[],[],["Chainsaw"],[],[]],
     "CHAINSAW RACING - GRINDY 500":             [["Chainsaw"],[],[],["Key"],[]],
     "OFFICE WORK - WORKING LATE":               [[],[],[],[],["Crates"]],
     "OFFICE WORK - DOOR CRASHER":               [["Virtual Shotgun"],[],[],[],[]],
