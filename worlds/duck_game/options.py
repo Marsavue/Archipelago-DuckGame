@@ -97,6 +97,14 @@ class DeathLinkAmnesty(Range):
     range_end = 100
     default = 0
 
+class SurviveTrapToBeat(DefaultOnToggle):
+    """
+    Whether or not you need to survive the trap in order for it to be completed
+    If this is true traps will go again if you die before its actions end/it says Trap Complete
+
+    """
+    display_name = "Survive Trap to Beat it"
+
 class TrapPercent(Range):
     """
     Percentage of filler items that are traps
@@ -288,6 +296,7 @@ class DuckGameOptions(PerGameCommonOptions):
     min_medal_types:MinMedalTypes
     death_link:DeathLink
     death_link_amnesty:DeathLinkAmnesty
+    survive_trap_to_beat:SurviveTrapToBeat
 
     trap_percent:TrapPercent
     ragdoll_weight:RagdollTrapWeight

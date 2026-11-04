@@ -7,6 +7,6 @@ jobs:
   release:
     uses: Marsavue/ap-actions/.github/workflows/release-apworld.yml@main
     with:
-      apworld-path: worlds/duckgame
+      apworld-path: worlds/duck_game
       ap-version: '0.6.7'
       python-version: '3.13'

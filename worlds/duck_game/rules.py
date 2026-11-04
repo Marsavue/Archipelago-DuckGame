@@ -4,7 +4,7 @@ from BaseClasses import CollectionState
 from rule_builder.rules import HasAll,NestedRule#, AtLeast
 from . import data
 from .data import medal_order
-from worlds.duckgame.options import MedalCountGoal
+from worlds.duck_game.options import MedalCountGoal
 from math import floor
 
 if TYPE_CHECKING:
