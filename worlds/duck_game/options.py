@@ -29,6 +29,8 @@ class SendLowerMedals(DefaultOnToggle):
     When you recieve a medal whether to send lower medals
     EX. Recieving Gold sends: Gold, Silver, Bronze
 
+    Can be set in game settings
+
     """
     display_name = "Send Lower Medals"
 
@@ -91,6 +93,8 @@ class DeathLinkAmnesty(Range):
     0  = Only receive Death Links does not send any when you die
     1+ = Send a Death Link when you die this amount of times
     
+    Can be set in game settings
+    
     """
     display_name = "Death Link Amnesty"
     range_start = 0
@@ -101,6 +105,8 @@ class SurviveTrapToBeat(DefaultOnToggle):
     """
     Whether or not you need to survive the trap in order for it to be completed
     If this is true traps will go again if you die before its actions end/it says Trap Complete
+
+    Can be set in game settings
 
     """
     display_name = "Survive Trap to Beat it"
